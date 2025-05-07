@@ -47,24 +47,24 @@ but it contains multiple syntax errors that prevent it from being parsed.
 const invalidBookingJSON = `
 {
   "hotelName": "Grand City Hotel",
-  "checkInDate": "2024-05-15"
+  "checkInDate": "2024-05-15",  //Comma is missing. It is needed to separate another key-value pairs.
   "checkOutDate": "2024-05-20",
   "guests": [
     {
-      name: "Alice Johnson",
+      "name": "Alice Johnson", //name enclosed in double quotes. Keys must be enclosed in double quotes.
       "age": 30,
       "email": "alice.johnson@example.com"
     },
     {
       "name": "Bob Smith",
-      "age": undefined,
+      "age": null, //instead of undefined, use null or any numeric value for "age".
       "email": "bob.smith@example"
     }
   ],
   "roomDetails": {
     "type": "Suite",
     "pricePerNight": 200,
-    "amenities": ["WiFi", "Breakfast", "Parking",]
+    "amenities": ["WiFi", "Breakfast", "Parking"] //Removed comma after "Parking". Trailing commas are not allowed after the last element in the array.
   }
 }
 `;
@@ -91,11 +91,20 @@ const invalidBookingJSON = `
 💬 Reflect and answer the following:
 
 1️⃣ What tools or techniques did you use to identify the errors?
+I have used vscode editor to identify the errors.
 
 2️⃣ How did you confirm that your corrected JSON file was valid?
+I have used jsonlint tool to validate the JSON file.
 
 3️⃣ Which errors were the most difficult to spot? Why?
+I can easily spot the errors using vscode and jsonlint because the given json is simple. 
+Unmatched brackets or braces and trailing comma errors are the most difficult to spot 
+due to the complexity of nested JSON objects.
 
 4️⃣ What strategies can help you avoid these kinds of errors in the future?
+To avoid these kinds of errors in the future, I can leverage code editors like VSCode that detect errors 
+in real-time with error highlighting. Additionally, using online validator tools like JSONLint can help 
+catch mistakes early and ensure the JSON is properly formatted.
+
    (e.g., syntax highlighting, linters, writing JSON by example)
 */
