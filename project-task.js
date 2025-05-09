@@ -58,7 +58,7 @@ const invalidBookingJSON = `
     {
       "name": "Bob Smith",
       "age": null, //instead of undefined, use null or any numeric value for "age".
-      "email": "bob.smith@example"
+      "email": "bob.smith@example.com" //Invalid email format. Add ".com".
     }
   ],
   "roomDetails": {
